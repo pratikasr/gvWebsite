@@ -1,4 +1,7 @@
 import Image from "next/image";
+import YouTubeScrollPlay from "@/components/YouTubeScrollPlay";
+import HeroSlideshow from "@/components/HeroSlideshow";
+import AlibaugCarousel from "@/components/AlibaugCarousel";
 
 export default function Home() {
     return (
@@ -21,6 +24,7 @@ export default function Home() {
                             {[
                                 { name: "Home", href: "#home" },
                                 { name: "MAHA Mumbai", href: "#maha-mumbai" },
+                                { name: "Video", href: "#video" },
                                 { name: "Locations", href: "#locations" },
                                 { name: "Projects", href: "#projects" },
                                 { name: "Why Us", href: "#why-us" },
@@ -65,11 +69,7 @@ export default function Home() {
 
             {/* Hero Section */}
             <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1B4D3E] via-[#0F3329] to-[#1B4D3E]">
-                    <div className="absolute inset-0 opacity-20" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C6A664' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                    }} />
-                </div>
+                <HeroSlideshow />
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
                     <div className="animate-fade-in-up">
@@ -225,6 +225,24 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* YouTube Video Section */}
+            <section id="video" className="py-24 bg-white">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center mb-12">
+                        <span className="text-[#C6A664] font-medium tracking-widest text-sm uppercase">Discover More</span>
+                        <h2 className="text-4xl md:text-5xl font-semibold text-[#1B4D3E] mt-4 mb-6">See MAHA Mumbai in Action</h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto">
+                            Watch how MAHA Mumbai is shaping the future of the region and why it&apos;s the right time to invest.
+                        </p>
+                    </div>
+                    <div className="max-w-4xl mx-auto">
+                        <div className="relative w-full rounded-2xl overflow-hidden shadow-xl border border-[#C6A664]/20 bg-[#FAF8F5]">
+                            <YouTubeScrollPlay videoId="8fioi1DmfnI" className="rounded-2xl" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Locations Section */}
             <section id="locations" className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-6">
@@ -361,6 +379,9 @@ export default function Home() {
                                 ))}
                             </div>
                         </div>
+
+                        {/* Green Vista & Connectivity – sliding panels */}
+                        <AlibaugCarousel />
                     </div>
                 </div>
             </section>
@@ -724,6 +745,7 @@ export default function Home() {
                                 {[
                                     { name: "Home", href: "#home" },
                                     { name: "MAHA Mumbai", href: "#maha-mumbai" },
+                                    { name: "Video", href: "#video" },
                                     { name: "Locations", href: "#locations" },
                                     { name: "Projects", href: "#projects" },
                                     { name: "Why Us", href: "#why-us" },
