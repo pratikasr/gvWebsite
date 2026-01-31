@@ -1,4 +1,7 @@
 import Image from "next/image";
+import YouTubeScrollPlay from "@/components/YouTubeScrollPlay";
+import HeroSlideshow from "@/components/HeroSlideshow";
+import AlibaugCarousel from "@/components/AlibaugCarousel";
 
 export default function Home() {
     return (
@@ -21,6 +24,7 @@ export default function Home() {
                             {[
                                 { name: "Home", href: "#home" },
                                 { name: "MAHA Mumbai", href: "#maha-mumbai" },
+                                { name: "Video", href: "#video" },
                                 { name: "Locations", href: "#locations" },
                                 { name: "Projects", href: "#projects" },
                                 { name: "Why Us", href: "#why-us" },
@@ -65,137 +69,7 @@ export default function Home() {
 
             {/* Hero Section */}
             <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1B4D3E] via-[#0F3329] to-[#1B4D3E]">
-                    <div className="absolute inset-0 opacity-20" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C6A664' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                    }} />
-                </div>
-
-                {/* Modern Metro Train Animation */}
-                <div className="absolute bottom-32 left-0 z-[8] pointer-events-none w-full overflow-visible">
-                    {/* Track */}
-                    <div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-transparent via-[#C6A664]/70 to-transparent shadow-lg"></div>
-                    
-                    {/* Metro Train */}
-                    <div 
-                        className="absolute bottom-0"
-                        style={{
-                            width: '600px',
-                            height: '140px',
-                            animation: 'metroMove 18s linear infinite',
-                        }}
-                    >
-                        <div className="relative w-full h-full">
-                            {/* Front light beam - pointing forward (direction of travel) */}
-                            <div 
-                                className="absolute left-full top-8 w-48 h-16 opacity-70"
-                                style={{
-                                    background: 'radial-gradient(ellipse at left, rgba(255, 255, 200, 0.9) 0%, rgba(198, 166, 100, 0.7) 20%, rgba(198, 166, 100, 0.4) 40%, transparent 70%)',
-                                    filter: 'blur(15px)',
-                                }}
-                            ></div>
-                            
-                            {/* Distinctive bullet nose with details */}
-                            <div 
-                                className="absolute bottom-0 left-0 w-40 h-24"
-                                style={{
-                                    background: 'linear-gradient(135deg, #1B4D3E 0%, #0F3329 50%, #1B4D3E 100%)',
-                                    clipPath: 'polygon(0 100%, 0 50%, 20% 20%, 100% 0, 100% 100%)',
-                                    boxShadow: '0 -10px 30px rgba(0, 0, 0, 0.7), inset 0 3px 0 rgba(255, 255, 255, 0.15)',
-                                }}
-                            >
-                                {/* Nose detail lines */}
-                                <div className="absolute top-0 left-0 w-full h-full">
-                                    <div className="absolute top-1/4 left-1/4 w-1/2 h-1 bg-[#C6A664]/40"></div>
-                                    <div className="absolute top-1/2 left-1/3 w-1/3 h-1 bg-[#C6A664]/30"></div>
-                                </div>
-                                {/* Nose highlight */}
-                                <div 
-                                    className="absolute top-0 left-0 w-full h-full"
-                                    style={{
-                                        background: 'linear-gradient(135deg, rgba(198, 166, 100, 0.4) 0%, transparent 60%)',
-                                    }}
-                                ></div>
-                                {/* Front light on nose */}
-                                <div className="absolute top-2 right-2 w-8 h-6 bg-gradient-to-b from-white via-[#C6A664] to-[#D4B87A] rounded-sm opacity-90 shadow-lg"></div>
-                            </div>
-                            
-                            {/* Main train body */}
-                            <div 
-                                className="absolute bottom-0 left-40 w-[calc(100%-10rem)] h-24"
-                                style={{
-                                    background: 'linear-gradient(180deg, #1B4D3E 0%, #0F3329 100%)',
-                                    boxShadow: '0 -10px 35px rgba(0, 0, 0, 0.8), inset 0 4px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.3)',
-                                }}
-                            >
-                                {/* Gold accent stripe */}
-                                <div className="absolute top-0 left-0 w-full h-4 bg-gradient-to-r from-[#C6A664] via-[#D4B87A] to-[#C6A664]"></div>
-                                
-                                {/* Individual window boxes */}
-                                <div className="absolute top-6 left-8 w-16 h-12 bg-[#C6A664]/25 rounded border-2 border-[#C6A664]/50 shadow-inner">
-                                    <div className="w-full h-full bg-gradient-to-b from-[#C6A664]/40 to-transparent rounded"></div>
-                                    <div className="absolute top-1 left-1 right-1 h-1 bg-white/30 rounded"></div>
-                                </div>
-                                <div className="absolute top-6 left-28 w-16 h-12 bg-[#C6A664]/25 rounded border-2 border-[#C6A664]/50 shadow-inner">
-                                    <div className="w-full h-full bg-gradient-to-b from-[#C6A664]/40 to-transparent rounded"></div>
-                                    <div className="absolute top-1 left-1 right-1 h-1 bg-white/30 rounded"></div>
-                                </div>
-                                <div className="absolute top-6 left-48 w-16 h-12 bg-[#C6A664]/25 rounded border-2 border-[#C6A664]/50 shadow-inner">
-                                    <div className="w-full h-full bg-gradient-to-b from-[#C6A664]/40 to-transparent rounded"></div>
-                                    <div className="absolute top-1 left-1 right-1 h-1 bg-white/30 rounded"></div>
-                                </div>
-                                <div className="absolute top-6 left-68 w-16 h-12 bg-[#C6A664]/25 rounded border-2 border-[#C6A664]/50 shadow-inner">
-                                    <div className="w-full h-full bg-gradient-to-b from-[#C6A664]/40 to-transparent rounded"></div>
-                                    <div className="absolute top-1 left-1 right-1 h-1 bg-white/30 rounded"></div>
-                                </div>
-                                <div className="absolute top-6 right-48 w-16 h-12 bg-[#C6A664]/25 rounded border-2 border-[#C6A664]/50 shadow-inner">
-                                    <div className="w-full h-full bg-gradient-to-b from-[#C6A664]/40 to-transparent rounded"></div>
-                                    <div className="absolute top-1 left-1 right-1 h-1 bg-white/30 rounded"></div>
-                                </div>
-                                <div className="absolute top-6 right-28 w-16 h-12 bg-[#C6A664]/25 rounded border-2 border-[#C6A664]/50 shadow-inner">
-                                    <div className="w-full h-full bg-gradient-to-b from-[#C6A664]/40 to-transparent rounded"></div>
-                                    <div className="absolute top-1 left-1 right-1 h-1 bg-white/30 rounded"></div>
-                                </div>
-                                <div className="absolute top-6 right-8 w-16 h-12 bg-[#C6A664]/25 rounded border-2 border-[#C6A664]/50 shadow-inner">
-                                    <div className="w-full h-full bg-gradient-to-b from-[#C6A664]/40 to-transparent rounded"></div>
-                                    <div className="absolute top-1 left-1 right-1 h-1 bg-white/30 rounded"></div>
-                                </div>
-                                
-                                {/* Side panels with detail */}
-                                <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-[#0F3329] via-[#1B4D3E] to-transparent">
-                                    <div className="absolute bottom-2 left-4 right-4 h-1 bg-[#C6A664]/30"></div>
-                                </div>
-                                
-                                {/* Ventilation grilles */}
-                                <div className="absolute bottom-10 left-4 right-4 h-2 bg-[#0F3329]/50 rounded"></div>
-                            </div>
-                            
-                            {/* Tail section with details */}
-                            <div 
-                                className="absolute bottom-0 right-0 w-32 h-24"
-                                style={{
-                                    background: 'linear-gradient(225deg, #1B4D3E 0%, #0F3329 100%)',
-                                    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 50%)',
-                                    boxShadow: '0 -10px 30px rgba(0, 0, 0, 0.7)',
-                                }}
-                            >
-                                {/* Tail detail lines */}
-                                <div className="absolute top-1/4 right-1/4 w-1/2 h-1 bg-[#C6A664]/30"></div>
-                                <div className="absolute top-1/2 right-1/3 w-1/3 h-1 bg-[#C6A664]/20"></div>
-                            </div>
-                            
-                            {/* Underbody detail */}
-                            <div className="absolute -bottom-2 left-0 w-full h-4 bg-gradient-to-r from-[#0F3329] via-[#1B4D3E] to-[#0F3329] rounded-t-lg"></div>
-                            
-                            {/* Speed lines effect */}
-                            <div className="absolute top-3 left-0 w-full h-1">
-                                <div className="absolute left-0 w-24 h-full bg-gradient-to-r from-transparent via-[#C6A664]/50 to-transparent" style={{ animation: 'speedLine 0.4s linear infinite' }}></div>
-                                <div className="absolute left-1/4 w-24 h-full bg-gradient-to-r from-transparent via-[#C6A664]/50 to-transparent" style={{ animation: 'speedLine 0.4s linear infinite', animationDelay: '0.2s' }}></div>
-                                <div className="absolute left-1/2 w-24 h-full bg-gradient-to-r from-transparent via-[#C6A664]/50 to-transparent" style={{ animation: 'speedLine 0.4s linear infinite', animationDelay: '0.4s' }}></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <HeroSlideshow />
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
                     <div className="animate-fade-in-up">
@@ -351,6 +225,24 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* YouTube Video Section */}
+            <section id="video" className="py-24 bg-white">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center mb-12">
+                        <span className="text-[#C6A664] font-medium tracking-widest text-sm uppercase">Discover More</span>
+                        <h2 className="text-4xl md:text-5xl font-semibold text-[#1B4D3E] mt-4 mb-6">See MAHA Mumbai in Action</h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto">
+                            Watch how MAHA Mumbai is shaping the future of the region and why it&apos;s the right time to invest.
+                        </p>
+                    </div>
+                    <div className="max-w-4xl mx-auto">
+                        <div className="relative w-full rounded-2xl overflow-hidden shadow-xl border border-[#C6A664]/20 bg-[#FAF8F5]">
+                            <YouTubeScrollPlay videoId="8fioi1DmfnI" className="rounded-2xl" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Locations Section */}
             <section id="locations" className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-6">
@@ -487,6 +379,9 @@ export default function Home() {
                                 ))}
                             </div>
                         </div>
+
+                        {/* Green Vista & Connectivity – sliding panels */}
+                        <AlibaugCarousel />
                     </div>
                 </div>
             </section>
@@ -850,6 +745,7 @@ export default function Home() {
                                 {[
                                     { name: "Home", href: "#home" },
                                     { name: "MAHA Mumbai", href: "#maha-mumbai" },
+                                    { name: "Video", href: "#video" },
                                     { name: "Locations", href: "#locations" },
                                     { name: "Projects", href: "#projects" },
                                     { name: "Why Us", href: "#why-us" },
